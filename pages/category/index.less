@@ -1,0 +1,41 @@
+// 分类页面样式
+.category_content {
+    height: ~'calc(100vh - 90rpx)';//避免编译
+    display: flex;
+    .left_menu {
+        flex: 1;
+        .left_items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80rpx;
+        }
+        // 定义一个选中激活类
+        .active {
+            background-color: var(--themeColor);
+            font-weight: 600;
+        }
+    }
+    .right_content {
+        flex: 2;
+        .right_goods {
+            .goods_title {
+                height: 80rpx;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .goods_list {
+                display: flex;
+                flex-wrap: wrap;
+                navigator {
+                    width: 33.33%;
+                    text-align: center;
+                    image {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}

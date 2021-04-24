@@ -1,0 +1,100 @@
+.page {
+  padding-bottom: 80rpx;
+}
+.detail_swiper swiper {
+  height: 65vw;
+  text-align: center;
+}
+.detail_swiper swiper swiper-item image {
+  width: 60%;
+}
+.goods_price {
+  color: red;
+  font-weight: 600;
+  padding: 15rpx;
+  font-size: 36rpx;
+}
+.goods_title {
+  display: flex;
+}
+.goods_title .goods_name {
+  flex: 5;
+  font-size: 32rpx;
+  color: black;
+  padding: 0 10rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.goods_title .goods_star {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px dashed black;
+}
+.goods_details {
+  padding-top: 20rpx;
+  text-align: center;
+}
+.goods_details .details_title {
+  color: var(--themeColor);
+  font-weight: 600;
+  font-size: 36rpx;
+}
+.goods_details .details_content {
+  margin-top: 14rpx;
+}
+.detail_footer {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80rpx;
+  background-color: whitesmoke;
+}
+.detail_footer .footer_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  color: #7e7878;
+}
+.detail_footer .footer_item button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+.detail_footer .footer_itemCart {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  color: white;
+  font-size: 28rpx;
+  height: 70rpx;
+  border-radius: 50rpx;
+  font-weight: 600;
+}
+.detail_footer .footer_itemBuy {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+  color: white;
+  font-size: 28rpx;
+  height: 70rpx;
+  border-radius: 50rpx;
+  font-weight: 600;
+}

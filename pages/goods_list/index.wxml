@@ -1,0 +1,85 @@
+<!--pages/goods_list/index.wxml-->
+<searchinput></searchinput>
+<tabs tabItem="{{tabs}}" bindtabsItemChange='getItemChange'>
+    <!-- 传入类容给子组件 -->
+    <block wx:if="{{tabs[0].isActive}}">
+        <view class="first_tab">
+            <navigator class="goods_item"open-type="navigate"
+            wx:for="{{goodsList}}"
+            wx:key="goods_id"
+            url="/pages/goods_details/index?goods_id={{item.goods_id}}"
+            >
+                <!-- 左边 存放图片 -->
+                <view class="goods_img">
+                    <!-- 用于无图片时，添加本地图片 -->
+                    <image src="{{item.goods_small_logo?item.goods_small_logo:'../../icons/null-img.jpg'}}" mode="widthFix"></image>
+                </view>
+                  
+                <!-- 右边 存放商品信息 -->
+                <view class="goods_info">
+                    <view class="goods_name">
+                        {{item.goods_name}}
+                    </view>
+                    <view class="goods_price">
+                      {{item.goods_price}}
+                    </view>
+                </view>
+                  
+            </navigator>
+        </view>
+          
+    </block>
+    <block wx:if="{{tabs[1].isActive}}">
+        <view class="first_tab">
+            <navigator class="goods_item"open-type="navigate"
+            wx:for="{{goodsList}}"
+            wx:key="goods_id"
+            url="/pages/goods_details/index?goods_id={{item.goods_id}}"
+            >
+                <!-- 左边 存放图片 -->
+                <view class="goods_img">
+                    <!-- 用于无图片时，添加本地图片 -->
+                    <image src="{{item.goods_small_logo?item.goods_small_logo:'../../icons/null-img.jpg'}}" mode="widthFix"></image>
+                </view>
+                  
+                <!-- 右边 存放商品信息 -->
+                <view class="goods_info">
+                    <view class="goods_name">
+                        {{item.goods_name}}
+                    </view>
+                    <view class="goods_price">
+                      {{item.goods_price}}
+                    </view>
+                </view>
+                  
+            </navigator>
+        </view>
+    </block>
+    <block wx:if="{{tabs[2].isActive}}">
+        <view class="first_tab">
+            <navigator class="goods_item"open-type="navigate"
+            wx:for="{{goodsList}}"
+            wx:key="goods_id"
+            url="/pages/goods_details/index?goods_id={{item.goods_id}}"
+            >
+                <!-- 左边 存放图片 -->
+                <view class="goods_img">
+                    <!-- 用于无图片时，添加本地图片 -->
+                    <image src="{{item.goods_small_logo?item.goods_small_logo:'../../icons/null-img.jpg'}}" mode="widthFix"></image>
+                </view>
+                  
+                <!-- 右边 存放商品信息 -->
+                <view class="goods_info">
+                    <view class="goods_name">
+                        {{item.goods_name}}
+                    </view>
+                    <view class="goods_price">
+                      {{item.goods_price}}
+                    </view>
+                </view>
+                  
+            </navigator>
+        </view>
+    </block>
+      
+</tabs>

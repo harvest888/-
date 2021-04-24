@@ -1,0 +1,16 @@
+/* 导入fontawesom字体图标库 */
+@import "../../styles/FontAwesome.wxss";
+.search-input {
+  height: 90rpx;
+  padding: 10rpx;
+  background-color: var(--themeColor);
+}
+.search-input navigator {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15rpx;
+  color: gray;
+  background-color: white;
+}

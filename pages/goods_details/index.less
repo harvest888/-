@@ -1,0 +1,109 @@
+.page {
+    padding-bottom: 80rpx;
+}
+// 轮播图
+.detail_swiper {
+    swiper {
+        height: 65vw;
+        text-align: center;
+        swiper-item {
+            image {
+                width: 60%;
+            }
+        }
+    }
+}
+// 商品价格
+.goods_price {
+    color: red;
+    font-weight: 600;
+    padding: 15rpx;
+    font-size: 36rpx;
+}
+// 商品标题
+.goods_title{
+    display: flex;
+    .goods_name{
+        flex: 5;
+        font-size: 32rpx;
+        color: black;
+        padding: 0 10rpx;
+        display: -webkit-box;//作为弹性伸缩盒模型显示
+        overflow: hidden;
+        -webkit-box-orient: vertical;//从上到下垂直排列子元素
+        -webkit-line-clamp: 2;//...显示的行数
+    }
+    .goods_star{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-left: 1px dashed black;
+    }
+}
+// 图文详情
+.goods_details{
+    padding-top: 20rpx;
+    text-align: center;
+    .details_title{
+        color: var(--themeColor);
+        font-weight: 600;
+        font-size: 36rpx;
+    }
+    .details_content{
+        margin-top: 14rpx;
+    }
+}
+// 详情页底部
+.detail_footer{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 80rpx;
+    background-color: whitesmoke;
+    .footer_item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        position: relative;
+        color: rgb(126, 120, 120);
+        button{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+        }
+    }
+    .footer_itemCart{
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: red;
+        color: white;
+        font-size: 28rpx;
+        height:70rpx;
+        border-radius: 50rpx;
+        font-weight: 600;
+    }
+    .footer_itemBuy{
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: orange;
+        color: white;
+        font-size: 28rpx;
+        height:70rpx;
+        border-radius: 50rpx;
+        font-weight: 600;
+    }
+}

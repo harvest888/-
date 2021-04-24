@@ -1,0 +1,7 @@
+<!--pages/about_us/index.wxml-->
+<view class="about_us">
+    <view class="title">关于我们</view>
+    <view class="content">
+        <text >我们坚持“以信赖为基础，以客户为中心的价值创造”的经营理念，持续创新，不断为用户和合作伙伴创造价值。致力于在不同的消费场景和连接终端上，通过强大的供应链，数据，技术以及营销能力，在正确的时间，正确的地 点为客户提供适合他们的产品和服务。</text>
+    </view>
+</view>

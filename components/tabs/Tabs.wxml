@@ -1,0 +1,21 @@
+<!--Tabs组件-->
+<view class="tabs">
+<!-- 导航标题 -->
+    <view class="tabs_title">
+        <view 
+        wx:for="{{tabItem}}"
+        wx:key="id"
+        class="title_item {{item.isActive?'active':''}}"
+        bindtap="passValue"
+        data-index="{{index}}"
+        >
+        {{item.title}}
+        </view>
+    </view>
+  
+    <view class="tabs_content">
+        <!-- 插槽/接受父组件传来的东西 -->
+        <slot></slot>
+    </view>
+</view>
+  

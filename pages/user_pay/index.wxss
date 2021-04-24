@@ -1,0 +1,131 @@
+.address {
+  height: 90rpx;
+  margin-top: 20rpx;
+}
+.address .addressBtn button {
+  width: 60%;
+}
+.address .showAddress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.address .showAddress .mapImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.address .showAddress .addressContent {
+  flex: 6;
+}
+.address .showAddress .addressContent .user_info .userName {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.address .showAddress .addressContent .user_info .telNumber {
+  color: gray;
+}
+.address .showAddress .addressContent .user_address {
+  font-size: 32rpx;
+}
+.address .showAddress .changeAddress {
+  flex: 1;
+  color: gray;
+  font-size: 60rpx;
+}
+.cart_content {
+  height: calc(100vh - 280rpx);
+}
+.cart_content .cart_title {
+  padding: 20rpx;
+  font-size: 36rpx;
+  color: var(--themeColor);
+  font-weight: 600;
+  border-bottom: 1rpx solid currentColor;
+}
+.cart_content .cart_main .cart_item {
+  display: flex;
+  padding: 10rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.cart_content .cart_main .cart_item .cart_chk_wrap {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart_content .cart_main .cart_item .cart_img_wrap {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart_content .cart_main .cart_item .cart_img_wrap image {
+  width: 80%;
+}
+.cart_content .cart_main .cart_item .cart_info_wrap {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cart_content .cart_main .cart_item .cart_info_wrap .goods_name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #666;
+}
+.cart_content .cart_main .cart_item .cart_info_wrap .goods_price_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.cart_content .cart_main .cart_item .cart_info_wrap .goods_price_wrap .goods_price {
+  color: red;
+  font-size: 34rpx;
+}
+.cart_content .cart_main .cart_item .cart_info_wrap .goods_price_wrap .cart_num_tool {
+  display: flex;
+}
+.cart_content .cart_main .cart_item .cart_info_wrap .goods_price_wrap .cart_num_tool .goods_num {
+  width: 55rpx;
+  height: 55rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+}
+.footer_tool {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  display: flex;
+  border-top: 1rpx solid #ccc;
+}
+.footer_tool .total_price_wrap {
+  margin-left: 28rpx;
+  flex: 5;
+  padding-right: 15rpx;
+  text-align: justify;
+}
+.footer_tool .total_price_wrap .total_price .total_price_text {
+  color: red;
+  font-size: 34rpx;
+  font-weight: 600;
+}
+.footer_tool .order_pay_wrap {
+  flex: 3;
+  background-color: red;
+  border-radius: 50rpx;
+  margin-right: 10rpx;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,11 @@
+/* pages/about_us/index.wxss */
+.about_us .title {
+  text-align: center;
+  font-size: 46rpx;
+  font-weight: 600;
+  margin-top: 20rpx;
+}
+.about_us .content {
+  margin-top: 20rpx;
+  text-indent: 2em;
+}

@@ -1,0 +1,35 @@
+
+  <view class="fb_main">
+    <view class="fb_title">请选择反馈问题的类型</view>
+      <radio-group class="fb_radio">
+          <view ><radio color="red" /><text >系统bug</text></view> 
+          <view ><radio color="red" /><text >功能需求</text></view> 
+          <view ><radio color="red" /><text >产品体验</text></view> 
+          <view ><radio color="red" /><text >其他问题</text></view> 
+      </radio-group>
+    <view class="problem">问题和意见</view>
+    <view class="fb_content">
+        <textarea value="{{textVal}}" bindinput="handleTextInput" placeholder="请描述一下您的问题"> </textarea>
+    </view>
+    <!-- 添加图片 -->
+    <view class="addImg">添加图片 (选填，提供问题截图)</view>
+    <view class="fb_tool">
+          <button bindtap="ChooseImg"  class="fa fa-camera" aria-hidden="true"></button>
+          <view class="up_img_item">
+            <view class="up_img_wrap"
+            wx:for="{{chooseImg}}"
+            wx:key="*this"
+            >
+              <image src="{{item}}"></image>
+              <icon type="clear" size="23" color="red" bindtap="delete" data-index="{{index}}">
+              </icon>
+            </view>
+          </view>
+        
+ 
+    </view>
+    <!-- 下一步按钮 -->
+    <view class="form_btn_wrap">
+      <button bindtap="handleFormSubmit"  type="warn" open-type='feedback'>下一步</button>
+    </view>
+  </view>

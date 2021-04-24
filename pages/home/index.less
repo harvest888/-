@@ -1,0 +1,53 @@
+// 轮播图样式
+.home_swiper {
+    swiper{
+        height: 340rpx;
+    }
+    image {
+        width: 100%;
+    }
+}
+// 导航栏样式
+.home_nav {
+    display: flex;
+    navigator {
+        flex: 1;
+        padding: 20rpx;
+        image {
+            width: 100%;
+        }
+    }
+}
+// 分类展示样式
+.home_display {
+    .group {
+        .title {
+            image {
+                width: 100%;
+            }
+            padding: 10rpx 0;
+        }
+        .content {
+            // 清除浮动
+            overflow: hidden;
+            navigator{
+                float: left;
+                width: 33.33%;
+                image {
+                    width: 100%;
+                    height: 100%;
+                }
+                &:first-child {
+                    border-left: 5rpx solid white;
+                    border-bottom: 5rpx solid red;
+                }
+                &:nth-last-child(-n+4){
+                    // 屏幕大小自适应
+                    height: calc(33.33vw*386/232/2);
+                    border: 5rpx solid white;
+                }
+
+            }
+        }
+    }
+}

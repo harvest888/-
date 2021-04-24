@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/category/index",
+    "pages/shopping_cart/index",
+    "pages/user/index",
+    "pages/search/index",
+    "pages/goods_list/index",
+    "pages/goods_details/index",
+    "pages/user_pay/index",
+    "pages/order_list/index",
+    "pages/feedback/index",
+    "pages/about_us/index",
+    "pages/collect/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#448bff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#808080",
+    "selectedColor": "#16a6e7",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "./icons/home.png",
+        "selectedIconPath": "./icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/category/index",
+        "text": "分类",
+        "iconPath": "./icons/menu.png",
+        "selectedIconPath": "./icons/menu-active.png"
+      },
+      {
+        "pagePath": "pages/shopping_cart/index",
+        "text": "购物车",
+        "iconPath": "./icons/cart.png",
+        "selectedIconPath": "./icons/cart-active.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "./icons/user.png",
+        "selectedIconPath": "./icons/user-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

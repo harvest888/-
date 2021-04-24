@@ -1,0 +1,58 @@
+<!-- 支付界面 -->
+<!-- 收货地址 -->
+<view class="address">
+    <!-- 显示地址 -->
+    <view class="showAddress">
+        <view class="mapImg">
+            <view class="fa fa-map-marker fa-3x" aria-hidden="true" style="color:red;"></view>
+        </view>
+        <view class="addressContent">
+            <view class="user_info">
+                <text class="userName">{{address.userName}}</text>
+                <text class="telNumber" decode="true">&emsp;{{address.telNumber}}</text>
+            </view>
+            <view class="user_address">
+                {{address.provinceName+address.cityName+address.countyName+address.detailInfo}}
+            </view>
+        </view>
+        <view class="changeAddress" bindtap="getAddress">></view>
+    </view>
+</view>
+<!-- 购物车内容 -->
+<view class="cart_content">
+    <view class="cart_title fa fa-cart-arrow-down" aria-hidden="true">  订单确认</view>
+    <scroll-view scroll-y="{{true}}" style="height:100%">
+        <view class="cart_main">
+                <view class="cart_item" wx:for="{{cart_goods}}" wx:key="goods_id">
+                    <!-- 商品图片 -->
+                    <navigator class="cart_img_wrap">
+                        <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'../../icons/null-img.jpg'}}"></image>
+                    </navigator>
+                    <!-- 商品信息 -->
+                    <view class="cart_info_wrap">
+                        <view class="goods_name">{{item.goods_name}}</view>
+                        <view class="goods_price_wrap">
+                            <view class="goods_price">￥{{item.goods_price}}</view>
+                            <view class="cart_num_tool">
+                                <view class="goods_num">x{{item.num}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+        </view>
+    </scroll-view>
+</view>
+<!-- 底部工具栏 -->
+<view class="footer_tool">
+    <!-- 总价格 -->
+    <view class="total_price_wrap">
+        <view>快递包邮</view>
+        <view class="total_price">
+            合计:
+            <text class="total_price_text">￥{{TotalPrice}}</text>
+        </view>
+    </view>
+    <!-- 结算 -->
+    <button class="order_pay_wrap" open-type="getUserInfo" bindgetuserinfo="getUserInfo" wx:if="{{!userInfo}}">授权</button>
+    <view class="order_pay_wrap"wx:else bindtap="payment">支付({{TotalNum}})</view>
+</view>

@@ -1,0 +1,41 @@
+.home_swiper swiper {
+  height: 340rpx;
+}
+.home_swiper image {
+  width: 100%;
+}
+.home_nav {
+  display: flex;
+}
+.home_nav navigator {
+  flex: 1;
+  padding: 20rpx;
+}
+.home_nav navigator image {
+  width: 100%;
+}
+.home_display .group .title {
+  padding: 10rpx 0;
+}
+.home_display .group .title image {
+  width: 100%;
+}
+.home_display .group .content {
+  overflow: hidden;
+}
+.home_display .group .content navigator {
+  float: left;
+  width: 33.33%;
+}
+.home_display .group .content navigator image {
+  width: 100%;
+  height: 100%;
+}
+.home_display .group .content navigator:first-child {
+  border-left: 5rpx solid white;
+  border-bottom: 5rpx solid red;
+}
+.home_display .group .content navigator:nth-last-child(-n+4) {
+  height: calc(33.33vw*386/232/2);
+  border: 5rpx solid white;
+}

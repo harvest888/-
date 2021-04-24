@@ -1,0 +1,17 @@
+/* 导入fontawesom字体图标库 */
+@import "./styles/FontAwesome.wxss";
+/* 页面样式初始化 */
+/* 在微信小程序中 不支持 通配符 '*' */
+page,view,text,swiper,swiper-item,image,navigator{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* 主题样式 */
+page{
+  /* 主题颜色（蓝色） 通过变量来实现 */
+  --themeColor:	#16a6e7;
+  /* 定义字体大小 14px */
+  font-size: 28rpx;
+}
+

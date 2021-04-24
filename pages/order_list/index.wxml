@@ -1,0 +1,60 @@
+<!-- pages/order_list/index.wxml -->
+<tabs tabItem="{{tabs}}" bindtabsItemChange='getItemChange'>
+    <!-- 全部 -->
+    <block wx:if="{{tabs[0].isActive}}">
+        <!-- 已购物品内容 -->
+        <view class="cart_content">
+            <scroll-view scroll-y="{{true}}" style="height:100%">
+                <view class="cart_main">
+                    <view class="cart_item" wx:for="{{pay_goods}}" wx:key="goods_id">
+                        <!-- 商品图片 -->
+                        <navigator class="cart_img_wrap"  url="/pages/goods_details/index?goods_id={{item.goods_id}}">
+                            <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'../../icons/null-img.jpg'}}"></image>
+                        </navigator>
+                        <!-- 商品信息 -->
+                        <view class="cart_info_wrap">
+                            <view class="goods_name">{{item.goods_name}}</view>
+                            <view class="goods_price_wrap">
+                                <view class="goods_price">￥{{item.goods_price}}</view>
+                                <view class="cart_num_tool">
+                                    <view class="goods_num">x{{item.num}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </block>
+    <!-- 待付款 -->
+    <block wx:if="{{tabs[1].isActive}}"></block>
+    <!-- 待收货 -->
+    <block wx:if="{{tabs[2].isActive}}">
+         <!-- 已购物品内容 -->
+        <view class="cart_content">
+            <scroll-view scroll-y="{{true}}" style="height:100%">
+                <view class="cart_main">
+                    <view class="cart_item" wx:for="{{pay_goods}}" wx:key="goods_id">
+                        <!-- 商品图片 -->
+                        <navigator class="cart_img_wrap"  url="/pages/goods_details/index?goods_id={{item.goods_id}}">
+                            <image mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'../../icons/null-img.jpg'}}"></image>
+                        </navigator>
+                        <!-- 商品信息 -->
+                        <view class="cart_info_wrap">
+                            <view class="goods_name">{{item.goods_name}}</view>
+                            <view class="goods_price_wrap">
+                                <view >已经在路上啦</view>
+                                <view class="goods_price">￥{{item.goods_price}}</view>
+                                <view class="cart_num_tool">
+                                    <view class="goods_num">x{{item.num}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </block>
+    <!-- 退换货 -->
+    <block wx:if="{{tabs[3].isActive}}"></block>
+</tabs>

@@ -1,0 +1,79 @@
+
+<view class="user_info_wrap">
+  <view wx:if="{{userInfo.avatarUrl}}" class="user_img_wrap">
+    <image class="user_bg" src="../../icons/background.jpg" mode="widthFix"></image>
+    <view class="user_info">
+      <image class="user_icon" src="{{userInfo.avatarUrl}}"></image>
+      <view class="user_name">{{userInfo.nickName}}</view>
+    </view>
+  </view>
+  <view wx:else class="user_btn">
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
+  </view>
+</view>
+<view class="user_content">
+  
+  <view class="user_main">
+    <!-- 收藏店铺 -->
+    <view class="history_wrap">
+      <navigator url="/pages/collect/index?index=0">
+        <view class="his_num">0</view>
+        <view class="his_name">收藏的店铺</view>
+      </navigator>
+      <navigator url="/pages/collect/index?index=1">
+        <view class="his_num">{{collectLength}}</view>
+        <view class="his_name">收藏的商品</view>
+      </navigator>
+      <navigator url="/pages/collect/index?index=2">
+        <view class="his_num">0</view>
+        <view class="his_name">关注的商品</view>
+      </navigator>
+      <navigator url="/pages/collect/index?index=3">
+        <view class="his_num">0</view>
+        <view class="his_name">我的足迹</view>
+      </navigator>
+    </view>
+    <!-- 我的订单 -->
+    <view class="orders_wrap">
+      <view class="orders_title">我的订单</view>
+      <view class="order_content">
+        <navigator url="/pages/order_list/index?index=0">
+          <view class="fa fa-file-text themeColor" aria-hidden="true" ></view>
+          <view class="order_name">全部订单</view>
+        </navigator>
+        <navigator url="/pages/order_list/index?index=1">
+          <view class="fa fa-cc-paypal themeColor" aria-hidden="true"></view>
+          <view class="order_name">待付款</view>
+        </navigator>
+        <navigator url="/pages/order_list/index?index=2">
+          <view class="fa fa-truck themeColor" aria-hidden="true"></view>
+          <view class="order_name">待收货</view>
+        </navigator>
+        <navigator url="/pages/order_list/index?index=3">
+          <view class="fa fa-reply-all themeColor" aria-hidden="true"></view>
+          <view class="order_name">退货/换货</view>
+        </navigator>
+      </view>
+    </view>
+    <!-- 收货地址管理 -->
+    <view class="address_wrap" bindtap="getAddress">
+      <view  class="fa fa-map-marker" aria-hidden="true" style="color:#ff5000">  收货地址管理</view>
+    </view>
+    <!-- 应用信息相关 -->
+    <view class="app_info_wrap">
+      <view class="app_info_item app_info_contact">
+        <text class="fa fa-phone" aria-hidden="true" style="color:#16a6e7">  联系客服</text>
+        <text>518-168-888</text>
+        <button open-type="contact"></button>
+      </view>
+      <navigator url="/pages/feedback/index" class="app_info_item" ><text  class="fa fa-envelope-o" aria-hidden="true" style="color:#16a6e7">  意见反馈</text></navigator>
+      
+      <navigator url="/pages/about_us/index"><view class="app_info_item1"><text class="fa fa-address-card-o" aria-hidden="true" style="color:#16a6e7">  关于我们</text></view></navigator>
+    </view>
+    <!-- 推荐 -->
+    <view class="share_wrap">
+     <view  class="fa fa-share-alt" aria-hidden="true" style="color:#16a6e7"> 分享小程序</view>
+     <button open-type="share"></button>
+    </view>
+  </view>
+</view>
