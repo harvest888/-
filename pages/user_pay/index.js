@@ -108,7 +108,8 @@ Page({
           });
         //  把没有支付的商品重新丢回购物车中
          wx.setStorageSync("cart",noPay_goods);
-
+        // 将没有支付的商品放入待付款中
+        wx.setStorageSync("waitpayGoods",noPay_goods);
         } else if (res.cancel) {
           wx.showToast({
             title: '支付取消',

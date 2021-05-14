@@ -1,13 +1,15 @@
 // pages/category/index.js
 // 导入request请求模块
 import {request} from "../../request/request.js"
+// 连接数据库
+const db = wx.cloud.database()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // 接口返回的分类数据
+    // 数据库返回的分类数据
     categoryList: Array,
     // 将要显示的左侧菜单数据
     leftList: Array,
@@ -97,12 +99,18 @@ Page({
   // 自定义方法
   // 获取分类展示数据
   /**
-   * 请求接口 https://api-hmugo-web.itheima.net/api/public/v1/categories
+   * 请求数据库category_goods
    */
   getCategory(){
-    request({url:"/categories"})
-    .then(result =>{
-      this.categoryList = result.data.message;
+    // 显示加载中图标
+    wx.showLoading({
+      title: '努力加载中',
+      mask:true
+    });
+    db.collection('category_goods').doc('247d14ad6093f77f0097511548835c78').get().then(res => {
+        //  关闭加载中图标
+        wx.hideLoading();
+      this.categoryList = res.data.message;
       // 将数据存入本地
       wx.setStorageSync("localData",{time:Date.now(),data: this.categoryList})
       // map 遍历
@@ -112,9 +120,8 @@ Page({
         leftList:leftList,
         rightContent:rightContent
       });
-    },err=>{
-      console.log(err);
-    });
+      console.log(res)
+    })
   },
   // 左侧菜单的点击事件
   clickTitle(e) {

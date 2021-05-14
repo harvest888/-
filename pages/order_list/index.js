@@ -30,6 +30,8 @@ Page({
     ],
      // 定义已买商品的缓存对象
      pay_goods:[],
+    //  待付款商品
+     waitpayGoods:[]
   },
 
 
@@ -55,8 +57,10 @@ Page({
    */
    onShow: function () {
     let pay_goods=wx.getStorageSync("payGoods")||[];
+    let waitpayGoods = wx.getStorageSync("waitpayGoods")||[];
     this.setData({
-      pay_goods
+      pay_goods,
+      waitpayGoods
     });
   },
 

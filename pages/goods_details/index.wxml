@@ -1,5 +1,5 @@
 <!--商品详情页面-->
-<view class="page">
+<view class="page" wx:if="{{isShow}}">
     <!-- 轮播图 -->
 <view class="detail_swiper">
     <swiper autoplay circular interval='3000' indicator-dots>
@@ -58,7 +58,10 @@
         <view bindtap="addCart">加入购物车</view>
     </view>
     <view class="footer_itemBuy">
-        <view>立即购买</view>
+        <view bindtap="pay">立即购买</view>
     </view>
 </view>
 </view>
+
+<!-- 当没有商品详情信息时 -->
+<view wx:else>商品飞走啦</view>

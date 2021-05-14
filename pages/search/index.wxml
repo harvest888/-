@@ -8,7 +8,7 @@
   <navigator class="search_item" 
    wx:for="{{serchInfoList}}"
    wx:key="cat_id"
-   url="/pages/goods_list/index?cid={{item.cat_id}}" open-type="navigate"
+   url="/pages/goods_list/index?cid={{item.cat_name}}" open-type="navigate"
   >
     <view class="logo">
         <image src="{{item.cat_icon}}" mode="widthFix"></image>

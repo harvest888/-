@@ -1,5 +1,6 @@
 // pages/goods_list/index.js
 import {request} from "../../request/request.js";
+const db = wx.cloud.database()
 Page({
 
   /**
@@ -34,10 +35,6 @@ Page({
     pagenum:"",
     pagesize:"10"
   },
-  // 定义总页数
-  pages:"",
-  // 商品总条数
-  totalLists:"",
   // 监听子组件传值得事件
   getItemChange(e){
     // 获取子组件传过来的索引值
@@ -53,23 +50,27 @@ Page({
 
  // 获取商品列表
   /**
-   * 请求接口https://api-hmugo-web.itheima.net/api/public/v1/goods/search
+   * 
    */
   getGoodsList(){
-    request({url:"/goods/search",data:this.params})
-    .then(result =>{
-      // 获取商品总条数
-      this.totalLists = result.data.message.total;
-      // 获取总页数,Math.ceil向上取整函数
-      this.pages = Math.ceil(this.totalLists / 10);
-      this.setData({
-        goodsList:[...result.data.message.goods,...this.data.goodsList],
-      });
-      // 数据回来关闭下拉刷新窗口
-      wx.stopPullDownRefresh();
-    },err=>{
-      console.log(err);
+    wx.showLoading({
+      title: '努力加载中',
+      mask:true
     });
+    db.collection('goods_list').where({
+      name: this.params.cid
+    }).get().then(res=>{
+       //  关闭加载中图标
+       wx.hideLoading();
+       console.log(res)
+       this.setData({
+         goodsList:[...res.data[0].message.goods,...this.data.goodsList],
+       });
+       // 数据回来关闭下拉刷新窗口
+       wx.stopPullDownRefresh();
+    
+    })
+  
   },
   /**
    * 生命周期函数--监听页面加载
@@ -118,7 +119,6 @@ Page({
     this.setData({
       goodsList:[]
     });
-    this.params.pagenum = 1;
     this.getGoodsList();
   },
 
@@ -126,15 +126,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if(this.params.pagenum>=this.pages){
-      // 到底提示
-      wx.showToast({
-        title: '已经到底啦！',
-      })
-    }else{
-      this.params.pagenum++;
-      this.getGoodsList();    
-    }
+     // 到底提示
+     wx.showToast({
+      title: '已经到底啦！',
+    })
   },
 
   /**

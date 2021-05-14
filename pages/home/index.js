@@ -1,6 +1,9 @@
 // pages/home/index.js
 // 导入request请求模块
 import {request} from "../../request/request.js"
+
+// 连接数据库
+const db = wx.cloud.database()
 Page({
 
   /**
@@ -80,44 +83,41 @@ Page({
 
   // 获取轮播图数据
   /**
-   * 请求接口 https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata
+   * 查询数据库表home_banner
    */
   getSwiperList(){
-    request({url:"/home/swiperdata"})
-    .then(result =>{
+     db.collection('home_banner').doc('1ace8ef16093e95a00ac5aff0491b3ec').get().then(res => {
+      // res.data 是一个包含集合中有权限访问的所有记录的数据，不超过 20 条
       this.setData({
-        swiperList: result.data.message
+        swiperList: res.data.message
       })
-    },err=>{
-      console.log(err);
-    });
+      console.log(res)
+    })
   },
   // 获取分类导航数据
   /**
-   * 请求接口 https://api-hmugo-web.itheima.net/api/public/v1/home/catitems
+   * 请求数据库home_nav
    */
   getNavList(){
-    request({url:"/home/catitems"})
-    .then(result =>{
+    db.collection('home_nav').doc('658e9e576093f5ea0c2e0c8f5236493e').get().then(res => {
+      // res.data 是一个包含集合中有权限访问的所有记录的数据，不超过 20 条
       this.setData({
-        navlist: result.data.message
+        navlist: res.data.message
       })
-    },err=>{
-      console.log(err);
-    });
+      console.log(res)
+    })
   },
   // 获取分类展示数据
   /**
-   * 请求接口 https://api-hmugo-web.itheima.net/api/public/v1/home/floordata
+   * 请求数据库home_floor
    */
   getClassifiedDisplay(){
-    request({url:"/home/floordata"})
-    .then(result =>{
+    db.collection('home_floor').doc('5b00f9706093f6d408f6d4593a62b7fc').get().then(res => {
+      // res.data 是一个包含集合中有权限访问的所有记录的数据，不超过 20 条
       this.setData({
-        displayList: result.data.message
+        displayList: res.data.message
       })
-    },err=>{
-      console.log(err);
-    });
+      console.log(res)
+    })
   }
 })
